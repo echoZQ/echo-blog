@@ -2,8 +2,8 @@
 title: "愚人码头"
 email: "54zhaoqian@gmail.com"
 description: "写故事的女同学"
-baseurl: "/"
-url: "http://echozq.github.io/echo-blog/"
+baseurl: "/echo-blog"
+url: "http://echozq.github.io/echo-blog"
 
 # Build settings
 markdown: kramdown
