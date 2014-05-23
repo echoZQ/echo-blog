@@ -1,10 +1,43 @@
-# Site settings
-title: "愚人码头"
-email: "54zhaoqian@gmail.com"
-description: "写故事的女同学"
-baseurl: "/echo-blog"
-url: "http://echozq.github.io/echo-blog"
+permalink: /:year/:month/:day/:title.html
+paginate: 10
+markdown: redcarpet
 
-# Build settings
-markdown: kramdown
-permalink: pretty
+# 作者信息
+author: 
+  name: 赵倩
+  email: 54zhaoqian@gmail.com
+  link: http://echozq.github.io/echo-blog/
+  github: https://github.com/echoZQ
+
+# 站点信息
+title: 愚人码头 
+description: 写故事的女同学
+url: http://echozq.github.io/echo-blog/
+rss_url: /pages/atom.xml
+
+# gavatar头像及Favicon
+gavatar: /public/upload/gavatar/gavatar.jpeg
+favicon: /public/upload/gavatar/favicon.ico
+
+# google analytics 设置
+ga:
+  id: UA-43667383-1
+  url: http://echozq.github.io/echo-blog/
+
+# disqus 设置
+disqus:
+  shortname: echo-zq
+
+# 主题设置，自动激活某个标签
+active: 技术
+
+# 首页除了最新文章外显示分类
+cates: 
+  - Python
+  - OpenStack
+
+# 中文本地化
+locals:
+  tags: 标签
+  about: 关于
+  newest: 最新文章
