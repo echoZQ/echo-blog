@@ -6,13 +6,13 @@ markdown: redcarpet
 author: 
   name: 赵倩
   email: 54zhaoqian@gmail.com
-  link: http://echozq.github.io/
+  link: http://echozq.github.io/echo-blog/
   github: https://github.com/echoZQ
 
 # 站点信息
 title: 愚人码头 
 description: 写故事的女同学
-url: http://echozq.github.io/
+url: http://echozq.github.io/echo-blog/
 rss_url: /echo-blog/pages/atom.xml
 
 # gavatar头像及Favicon
@@ -22,7 +22,7 @@ favicon: /echo-blog/public/upload/gavatar/favicon.ico
 # google analytics 设置
 ga:
   id: UA-43667383-1
-  url: http://echozq.github.io/
+  url: http://echozq.github.io/echo-blog/
 
 # disqus 设置
 disqus:
