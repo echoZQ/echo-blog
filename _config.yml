@@ -16,8 +16,8 @@ url: http://echozq.github.io/echo-blog/
 rss_url: /pages/atom.xml
 
 # gavatar头像及Favicon
-gavatar: /public/upload/gavatar/gavatar.jpeg
-favicon: /public/upload/gavatar/favicon.ico
+gavatar: /echo-blog/public/upload/gavatar/gavatar.jpeg
+favicon: /echo-blog/public/upload/gavatar/favicon.ico
 
 # google analytics 设置
 ga:
