@@ -43,6 +43,8 @@ description: 虽然换了Mac用起了Nginx,但是Apached配置虚拟主机说不
 ### todo
 .htaccess文件
 
-参考链接[感谢作者][访问](http://www.ittribalwo.com/article/229.html)
+## 参考链接[感谢作者]
 
-参考链接[感谢作者][访问](http://wenku.baidu.com/view/00300a32eefdc8d376ee3219.html)
+[访问](http://www.ittribalwo.com/article/229.html)
+
+[访问](http://wenku.baidu.com/view/00300a32eefdc8d376ee3219.html)

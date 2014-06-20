@@ -47,16 +47,19 @@ jekyll --server 若本地服务器启动正常，打开浏览器，输入地址�
 
 ## 参考链接【感谢作者】
 
-源及安装jekyll[访问](http://zhanglubing.github.io/2012-08-15/setup-jekyll-step-by-step.html)
-
 模板[访问](http://yansu.org/)
 
 目录结构[访问](http://jekyllcn.com/docs/github-pages/)
 
+源及jekyll安装[访问](http://zhanglubing.github.io/2012-08-15/setup-jekyll-step-by-step.html)
+
+
 配置文件及默认变量[访问](http://bg.biedalian.com/2013/08/01/use-jekyll.html)
+
+文章分类索引[访问](http://blog.segmentfault.com/skyinlayer/1190000000406017) [访问](http://pchou.info/web-build/2013/01/09/build-github-blog-page-06.html)
 
 Markdown换行,加链接等写法[访问](http://jekyllcn.com/docs/github-pages/)  [访问](http://wowubuntu.com/markdown/#p)
 
-文章分类索引[访问](http://blog.segmentfault.com/skyinlayer/1190000000406017) [访问](http://pchou.info/web-build/2013/01/09/build-github-blog-page-06.html)
+
 
 

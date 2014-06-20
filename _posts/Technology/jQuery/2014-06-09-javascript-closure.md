@@ -58,5 +58,5 @@ call和apply方法通常用来修改函数的上下文，函数中的this指针�
 	print(printName.apply(abruzzi));
 	
 	
-### 参考博文
-http://www.cnblogs.com/philzhou/p/3282216.html[访问]
+### 参考链接
+[访问](http://www.cnblogs.com/philzhou/p/3282216.html)
