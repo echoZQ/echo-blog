@@ -10,7 +10,8 @@ description: php常用资源
 	mb_strlen( $str, $encoding ) 
 	// 获取中文长度
 	// $str，要计算长度的字符串 
-	// $encoding，网页编码，如utf-8,GB2312,GBK 
+	// $encoding，网页编码，如utf-8,GB2312,G
+	BK 
 	
 	mb_substr( $str, $start, $length, $encoding ) 
 	// 截取中文字符串
