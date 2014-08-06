@@ -18,3 +18,4 @@ description: php常用资源
 	// $start，截断开始处，起始处为0 
 	// $length，要截取的字数 
 	// $encoding，网页编码，如utf-8,GB2312,GBK 
+	
