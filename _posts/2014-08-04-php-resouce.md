@@ -19,3 +19,7 @@ description: php常用资源
 	// $length，要截取的字数 
 	// $encoding，网页编码，如utf-8,GB2312,GBK 
 	
+## php数组反向排序
+	
+	array_reverse() //函数传入参数为一数组，返回一个与传入参数值相同但顺序相反的数组
+	
