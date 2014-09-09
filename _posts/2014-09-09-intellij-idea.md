@@ -1,6 +1,6 @@
 ---
 layout: post
-title: seaJs
+title: Intellij idea抽风处理
 category: 工具
 tags: IDE
 description: IDE抽风处理
