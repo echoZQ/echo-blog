@@ -50,10 +50,11 @@ http请求方式：POST（请使用https协议） https://api.weixin.qq.com/cgi-
 ### ajax两个问题
 第一个是AJAX以何种格式来交换数据？第二个是跨域的需求如何解决？
 
-JSON和JSONP虽然只有一个字母的差别，但其实他们根本不是一回事儿：JSON是一种数据交换格式，而JSONP是一种依靠开发人员的非官方跨域数据交互协议。一个是描述信息的格式，一个是信息传递双方约定的方法。
+JSON是一种数据交换格式，而JSONP是一种依靠开发人员的非官方跨域数据交互协议。一个是描述信息的格式，一个是信息传递双方约定的方法。
 
 ## 什么是jsonP
-jsonp的核心则是动态添加script标签来调用服务器提供的js脚本。
+jsonp的核心则是**动态添加script标签**来调用服务器提供的js脚本。
+
 ### jsonP的产生
 1.Ajax直接请求普通文件存在跨域无权限访问的问题，甭管你是静态页面、动态网页、web服务、WCF，只要是跨域请求，一律不准；
 
@@ -194,12 +195,6 @@ OK，服务器很聪明，这个叫做flightResult.aspx的页面生成了一段�
 如上关于jsonP的分析可以知道，我想用ajax实现post跨域提交是不行了(貌似是可以实现的但是很复杂)
 
 HttpClient是一个客户端的HTTP通信实现库。HttpClient的目标是发送和接收HTTP报文。HttpClient不会去缓存内容，执行嵌入在HTML页面中的javascript代码，猜测内容类型，重新格式化请求/重定向URI，或者其它和HTTP运输无关的功能。
-
-CORS与JSONP相比，无疑更为先进、方便和可靠。
-
-	1、JSONP只能实现GET请求，而CORS支持所有类型的HTTP请求。
-    2、使用CORS，开发者可以使用普通的XMLHttpRequest发起请求和获得数据，比起JSONP有更好的错误处理。
-    3、JSONP主要被老的浏览器支持，它们往往不支持CORS，而绝大多数现代浏览器都已经支持了CORS（这部分会在后文浏览器支持部分介绍）
 
 
 jsonP相关[访问](http://www.cnblogs.com/dowinning/archive/2012/04/19/json-jsonp-jquery.html)
