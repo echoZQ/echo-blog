@@ -11,45 +11,57 @@ description: seaJs
 
 区别：
 
-1. 对于依赖的模块，AMD是提前执行，CMD是延迟执行。CMD推崇as lazy as possible.
+1.对于依赖的模块，AMD是提前执行，CMD是延迟执行。CMD推崇as lazy as possible.
 
-2. CMD 推崇依赖就近，AMD 推崇依赖前置。看代码：
-	
+2.CMD 推崇依赖就近，AMD 推崇依赖前置。看代码：
 
-		define(function(require, exports, module) {
-		var a = require('./a')
+	define(function(require, exports, module) {
+		var a = require('./a');
 		a.doSomething()
 		// 此处略去 100 行
-		var b = require('./b') // 依赖可以就近书写
+		var b = require('./b'); // 依赖可以就近书写
 		b.doSomething()
 		// ... 
-		})
+	})
+如:
 		
-		// AMD 默认推荐的是
-		define(['./a', './b'], function(a, b) { // 依赖必须一开始就写好
+	define(function(require, exports, module) {
+		var $ = require('jquery');
+		var _ = require('underscore');
+	})
+	
+AMD 默认推荐的是
+
+	define(['./a', './b'], function(a, b) { // 依赖必须一开始就写好
 		a.doSomething()
 		// 此处略去 100 行
 		b.doSomething()
-		...
-		}) 
+		//...
+	}) 
+如:
+		
+	define(['jquery', 'underscore'], function($, _) {
+		$.ajax();
+		_.map();
+	})
 
-3. AMD的API默认是一个当多个用，CMD的API严格区分，推崇职责单一。比如 AMD 里，require分全局require和局部require，都叫 require。CMD 里，没有全局 require，而是根据模块系统的完备性，提供 seajs.use 来实现模块系统的加载启动。CMD里每个API都简单纯粹。
+3.AMD的API默认是一个当多个用，CMD的API严格区分，推崇职责单一。比如 AMD 里，require分全局require和局部require，都叫 require。CMD 里，没有全局 require，而是根据模块系统的完备性，提供 seajs.use 来实现模块系统的加载启动。CMD里每个API都简单纯粹。
 
 玉伯:
 AMD和CMD表面上的区别是书写格式不同。
 AMD下，默认推荐的模块格式是
 
-		define(['a','b'], function(a, b) {
+	define(['a','b'], function(a, b) {
  	 	// do sth
-		})
+	})
 CMD里，默认推荐的是
 
-		define(function(require, exports, module) {
+	define(function(require, exports, module) {
   		var a = require('a')
   		var b = require('b')
   		// do sth
  		 ...
-		})
+	})
 目前越来越意识到，默认推荐的模式书写格式表面上的不同，背后带来的差异越来越有意思。
 其中一个核心差异是:就近原则
 AMD 中的依赖通过函数参数传入，带来的好处是一个模块的依赖直接在头部一目了然，非常清晰。带来的不足是，AMD下其实默认推荐了var 在一起的写法，比如
