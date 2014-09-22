@@ -98,6 +98,9 @@ CMD 更懒。
 何为自然？CMD 认为就近原则书写代码更自然，AMD则觉得提前都写好更自然。
 何为自然？CMD 认为需要时才执行更自然，AMD觉得依赖就应该提前都执行好，这样才自然。
 
+### 玉伯有句话-RequireJS是没有明显的bug，SeaJS是明显没有bug
+有篇博文蛮有意思的[访问](http://www.douban.com/note/283566440/)
+
 ### uglify
 
 师傅说uglify对requireJs没有影响，但是对seaJs是致命的，因为seaJs用的是正则表达式,所以使用seaJs时，应该使用spmJs压缩。其中spmJs主要做了三件事:
