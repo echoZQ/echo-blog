@@ -34,3 +34,5 @@ description: 汤姆大叔的博客阅读~
 	for (var i = 0; i < myarray.length; i++) {
    		// 使用myarray[i]做点什么
 	}
+
+### 

@@ -12,4 +12,14 @@ description: 总结一些记得不是很清楚的css属性
 	text-overflow:ellipsis; 
 	white-space: nowrap; //限制不换行
 	overflow: hidden;
+### 去除chrome浏览器下input和textarea点击选中框
 
+input和textarea在聚焦的时候都有一个黄色的边框，而且textarea还可以任意拖动放大，这是不能容忍的。
+
+	//重置input和textarea的默认样式
+	input,button,select,textarea {
+		outline:none
+	}
+	textarea {
+		resize:none
+	}
