@@ -10,8 +10,10 @@ description: 总结一些记得不是很清楚的css属性
 	//原需求为通告之间上下滚动，若某条通告过长则自右向左滚动。css暂未找到合适的解决方案，目前还没有浏览器支持overflow-style:marquee,panner;
 	
 	text-overflow:ellipsis; 
-	white-space: nowrap; //限制不换行
+	white-space: nowrap; //限制不换行	
 	overflow: hidden;
+	
+## 用css去除chrome、safari等webikt内核浏览器对控件默认样式
 ### 去除chrome浏览器下input和textarea点击选中框
 
 input和textarea在聚焦的时候都有一个黄色的边框，而且textarea还可以任意拖动放大，这是不能容忍的。
@@ -23,3 +25,19 @@ input和textarea在聚焦的时候都有一个黄色的边框，而且textarea�
 	textarea {
 		resize:none
 	}
+	*:focus {
+		outline: none;
+	}
+### -webkit-appearance [访问](http://www.w3cplus.com/css3/changing-appearance-of-element-with-css3.html)
+
+做流量充值手机端页面的时候发现华为机的UC浏览器下 select的边框去不掉，其实可以使用:
+
+	//去掉浏览器的默认样式
+	-webkit-appearance: none; 
+	-moz-appearance: none;
+	appearance: none;
+
+此外这个属性还可以用来调用显示浏览器对各种控件的默认样式。如:
+
+	<span style="-webkit-appearance:button;"> 我是span啊亲!!</span>
+	
