@@ -2,7 +2,7 @@
 layout: post
 title: seaJs
 category: 技术
-tags: js
+tags: SeaJs
 description: seaJs
 ---
 之前使用过requireJs做模块化开发,用的不是很好。看看seaJs和requireJs有什么不同。

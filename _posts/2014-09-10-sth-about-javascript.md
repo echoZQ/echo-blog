@@ -2,7 +2,7 @@
 layout: post
 title: javascript基础
 category: 阅读
-tags: javascript 
+tags: Javascript 
 description: 汤姆大叔的博客阅读~
 ---
 
