@@ -2,7 +2,7 @@
 layout: post
 title: css常用资源
 category: 备忘
-tags: css 
+tags: Css 
 description: 总结一些记得不是很清楚的css属性
 ---
 ### 做通告显示的时候碰到了字数超出的问题，css加省略号的方法为(注意:使用在文本的直接父级才有效)

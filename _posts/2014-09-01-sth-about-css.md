@@ -2,7 +2,7 @@
 layout: post
 title: css基础补习
 category: 阅读
-tags: css
+tags: Css
 description: 每天积累一点，多看别人的博客
 ---
 

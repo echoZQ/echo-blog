@@ -2,7 +2,7 @@
 layout: post
 title: linux相关
 category: 备忘 
-tags: linux
+tags: Linux
 description: 每天积累一点，多看别人的博客
 ---
 
