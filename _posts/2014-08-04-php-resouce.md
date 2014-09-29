@@ -32,3 +32,49 @@ description: php常用资源
 
 	property_exists(mixed $class, string $property) 
 	／／判断某个类是否有某个属性
+	
+### php 二维数组排序
+	
+	/**
+     * 二维数组按指定键值排序
+     *
+     * @param array $array 数组
+     * @param string $keys 键名
+     * @param string $type 排序方式
+     * @return array|string
+     */
+    public function array_sort($array, $keys, $type='asc') {
+        if(!isset($array) || !is_array($array) || empty($array)){
+            return '';
+        }
+        if(!isset($keys) || trim($keys)==''){
+            return '';
+        }
+        if(!isset($type) || $type=='' || !in_array(strtolower($type),array('asc', 'desc'))){
+            return '';
+        }
+        $keysValue=array();
+        foreach($array as $key=>$val){
+            $val[$keys] = str_replace('-','',$val[$keys]);
+            $val[$keys] = str_replace(' ','',$val[$keys]);
+            $val[$keys] = str_replace(':','',$val[$keys]);
+            $keysValue[] = $val[$keys];
+        }
+        asort($keysValue); //key值排序
+        reset($keysValue); //指针重新指向数组第一个
+        foreach($keysValue as $key => $vals) {
+            $keysort[] = $key;
+        }
+        $keysValue = array();
+        $count = count($keysort);
+        if(strtolower($type) !== 'asc'){
+            for($i = $count-1; $i >= 0; $i--) {
+                $keysvalue[] = $array[$keysort[$i]];
+            }
+        }else{
+            for($i = 0; $i < $count; $i++){
+                $keysValue[] = $array[$keysort[$i]];
+            }
+        }
+        return $keysValue;
+    }
