@@ -36,4 +36,37 @@ javascript中没有类的概念，都是函数。类有一个很重要的特性�
 	employee.apply(p);
 	p.__proto__ = employee.prototype;
 
+### 师傅的例子
 
+	var A = function() {
+    	this.i = 1;
+	}
+
+	A.prototype = {
+    	i: 2
+	}
+
+	var B = function() {
+    	this.i = 1;
+	}
+
+	B.prototype= {
+    	i : 3
+	}
+
+	var a = new A();
+	delete a.i; //删除的不是原型链上的值
+	console.log(a.i);  //2 查找原型链上的i
+	a.i = 5; //重新赋值自身属性
+	console.log(a.i); //找的是this.i
+	delete a.i; //删除的不是原型链上的值
+	A.prototype.i = 9;
+	console.log(a.i); //9
+
+	a.__proto__ = B.prototype;
+	console.log(a.i); //3
+
+	console.log((typeof a) === (typeof (new B()))); //true
+	
+感觉属性查找的时候，先查找构造函数里的属性，如果找不到，才是查找原型链。如果要修改原型链上的属性，应当用A.prototype.i = ?
+	

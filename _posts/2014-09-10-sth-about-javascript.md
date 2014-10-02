@@ -6,6 +6,7 @@ tags: Javascript
 description: 汤姆大叔的博客阅读~
 ---
 
+## Chapter 1
 ### 创建隐式全局变量的反例-使用任务链进行部分var声明
 
 	//反例，勿使用 
@@ -33,6 +34,17 @@ description: 汤姆大叔的博客阅读~
 	//不足在于每次循环的时候数组的长度都要去获取下(反例)
 	for (var i = 0; i < myarray.length; i++) {
    		// 使用myarray[i]做点什么
+	}		
+
+### 左花括号的位置
+	
+	// 警告： 意外的返回值
+	function func() {
+    	return
+  		// 下面代码不执行 由于隐含分号，函数返回undefined
+   		{
+      		name : "Batman"
+   		}
 	}
 
-### 
+## Chapter 5
