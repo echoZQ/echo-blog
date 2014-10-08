@@ -39,8 +39,15 @@ js伪数组:key都是数字且严格递增并且具有length成员对象(argumen
 	
 ### $.extend
 
-　extend()函数是jQuery的基础函数之一，作用是扩展现有的对象。注意extend可以深拷贝也可以浅拷贝，**深拷贝是拷贝实例（即源对象修改不会影响目标对象），浅拷贝是拷贝对象**。
-　
+　extend()函数是jQuery的基础函数之一，作用是扩展现有的对象。注意extend可以深拷贝也可以浅拷贝，**深拷贝是拷贝实例（即源对象修改不会影响目标对象），浅拷贝是拷贝对象**。  
+　extend函数三种用法:  
+		
+		jQuery.extend(object);  //一个参数的时候，目标对象将会被jquery本身代替
+  		jQuery.extend(object1,object2,objectN);  
+  		jQuery.extend(bool,object1);  
+  		jQuery.extend(bool,object1,object2,objectN);
+  	
+  	
 ### jQuery.proxy()
 	
 	接受一个函数，然后返回一个新函数，并且这个新函数始终保持了特定的上下文语境。

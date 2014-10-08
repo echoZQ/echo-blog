@@ -39,6 +39,8 @@ jekyll --server 若本地服务器启动正常，打开浏览器，输入地址�
 
 这个问题居然瞎纠结了好久，反射弧果然太长了。。。
 
+### markdown的一些用法
+感谢作者[访问](http://equation85.github.io/blog/markdown-examples/)
 
 
 
