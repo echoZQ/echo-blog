@@ -35,8 +35,15 @@ js伪数组:key都是数字且严格递增并且具有length成员对象(argumen
 
 ### 参数类型的判断
 	
-	Object.prototype
+	Object.prototype.toString.call(参数) //使用object原型上的方法判断参数类型
 	
+### $.extend
+
+　extend()函数是jQuery的基础函数之一，作用是扩展现有的对象。注意extend可以深拷贝也可以浅拷贝，**深拷贝是拷贝实例（即源对象修改不会影响目标对象），浅拷贝是拷贝对象**。
+　
+### jQuery.proxy()
+	
+	接受一个函数，然后返回一个新函数，并且这个新函数始终保持了特定的上下文语境。
 	
 	
 	
