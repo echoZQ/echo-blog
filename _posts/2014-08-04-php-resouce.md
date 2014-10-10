@@ -78,3 +78,11 @@ description: php常用资源
         }
         return $keysValue;
     }
+    
+### xss攻击防御
+
+只要是产生XSS的地方都是伴随着输入或者输出的，过滤 ' " , <  > \   <!--等  
+	
+		
+	
+	
