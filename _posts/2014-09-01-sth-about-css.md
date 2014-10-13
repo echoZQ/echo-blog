@@ -63,3 +63,17 @@ clear: 规定元素的哪一侧不允许其他浮动元素。
   		……
   		……
   	</div>
+  	
+### 注意点
+	1.如果没有content属性，伪类元素将没有任何作用。但是可以指定content为空，同时正如前面所说，插入的内容默认是一个行内元素，并且在HTML源代码中无法看到，这就是为什么称之为伪类元素的理由，所以也就无法通过DOM对其进行操作。  
+	2:after无法作用在img上
+	
+
+### z-index层级树
+**从父规则: 父节点的层级决定了子节点所在层级！！！**    
+
+position 设为 relative (相对定位), absolute (绝对定位) 或者 fixed (固定定位)默认层级比属性值为 static的高  
+
+在 z-index 属性仅在节点的 position 属性为 relative, absolute 或者 fixed 时生效.
+
+参考链接[访问](http://www.neoease.com/css-z-index-property-and-layering-tree/)
