@@ -2,7 +2,7 @@
 layout: post
 title: 块级格式化上下文
 category: 技术
-tags: css
+tags: Css
 description: 关于清楚浮动及块级格式化上下文
 ---
 ### 浮动的缺陷
