@@ -6,7 +6,7 @@ tags: Javascript
 description: 汤姆大叔的博客阅读~
 ---
 
-## Chapter 1
+## 提高jQuery效率
 ### 创建隐式全局变量的反例-使用任务链进行部分var声明
 
 	//反例，勿使用 
@@ -46,5 +46,30 @@ description: 汤姆大叔的博客阅读~
       		name : "Batman"
    		}
 	}
+	
+### 精简javascript
+尽可能的合并函数(这点自己忽略了!!!)  
 
-## Chapter 5
+	$first.on('click',function(){
+    	$first.css({
+        	'border':'1px solid red',
+        	'color':'blue'
+    	});	
+	});
+	
+### 链式操作
+	
+	//糟糕
+	$second.html(value);
+	$second.on('click',function(){
+    	alert('hello everybody');
+	});
+	$second.fadeIn('slow');
+	$second.animate({height:'120px'},500);
+ 
+	//建议
+	$second.html(value);
+	$second.on('click',function(){
+    	alert('hello everybody');
+	}).fadeIn('slow')
+	  .animate({height:'120px'},500);
