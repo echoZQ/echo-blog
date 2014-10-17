@@ -73,3 +73,9 @@ description: 汤姆大叔的博客阅读~
     	alert('hello everybody');
 	}).fadeIn('slow')
 	  .animate({height:'120px'},500);
+	  
+## 短路操作符号
+短路表达式: "&&"和"||"  
+	
+	foo = foo||bar;
+&&取最后值，||取第一满足的值
