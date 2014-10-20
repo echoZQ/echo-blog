@@ -40,4 +40,17 @@ input和textarea在聚焦的时候都有一个黄色的边框，而且textarea�
 此外这个属性还可以用来调用显示浏览器对各种控件的默认样式。如:
 
 	<span style="-webkit-appearance:button;"> 我是span啊亲!!</span>
+
+## css hack
+IE9及以下浏览器 "\9"  
+IE7及以下浏览器 "\*"  
+IE6 "\_"  
+如
+
+	.ie6_7_8{
+    	color:blue; /*所有浏览器*/
+    	color:red\9; /*IE8以及以下版本浏览器,其实就是为了IE8,因为IE8既不支持*又不支持_*/
+       *color:green; /*IE7及其以下版本浏览器*/
+   		_color:purple; /*IE6浏览器*/
+	}
 	
