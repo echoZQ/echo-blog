@@ -57,6 +57,34 @@ jquery.validate是一个很好用的表单验证插件,可以与jquery.form(将�
 	 
 5. 两种解决方案，前者好像麻烦点改动更多，但具体孰优孰劣我也说不上来==.
 
+## placeholder兼容问题
+	
+	不支持html5的低版本的浏览器中，placeholder属性是无效的，可以用jquery去实现placeholder。但是如果input的type是password的时候，出现的会是...,我们可以对password另外写一段js代码：给定两个输入框，一个是text，一个为password的，在有焦点的时候，切换为password，失去焦点的时候，切换为text用来展示placeholder属性.
+	
+	<input type="text" id="pwd" value="请输入密码"/>
+	<input type="password" id="password" style="display:none;"/>
+	<script type="text/javascript" src="jquery-1.7.2.js"></script>
 
+	<script type="text/javascript">
+
+		$(function(){
+    		var pwd = $("#pwd");
+    		var password = $("#password");
+    		pwd.focus(function(){
+        		pwd.hide();
+        		password.show().focus();
+    		}); 
+
+    		password.focusout(function(){
+        		if(password.val().trim() === ""){
+           			password.hide();
+            		pwd.show();
+        	}
+   	 	});
+	});
+
+	</script>
+
+	
 	 
 	
