@@ -64,9 +64,7 @@ jquery.validate是一个很好用的表单验证插件,可以与jquery.form(将�
 	<input type="text" id="pwd" value="请输入密码"/>
 	<input type="password" id="password" style="display:none;"/>
 	<script type="text/javascript" src="jquery-1.7.2.js"></script>
-
 	<script type="text/javascript">
-
 		$(function(){
     		var pwd = $("#pwd");
     		var password = $("#password");
@@ -82,7 +80,6 @@ jquery.validate是一个很好用的表单验证插件,可以与jquery.form(将�
         	}
    	 	});
 	});
-
 	</script>
 
 	
