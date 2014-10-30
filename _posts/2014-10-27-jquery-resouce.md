@@ -209,4 +209,41 @@ $().data('a') 在表现形式上，虽然是关联到dom上的，但是实际上
     // ......
 	};
 	//每个uid对应一个elem缓存数据，每个缓存对象是可以由多个name/value(名值对)对组成的，而value是可以是**任何数据类型**的。
+	
+
+## 回溯方法(end和putStack)
+了解了jQuery对DOM进行**遍历**背后的工作机制，可以在编写代码时有意识地避免一些不必要的重复操作，从而提升代码的性能！！！。  
+jQuery选择器通过jQuery处理后返回的不仅仅只有dom对象，而是一个包装容器。
+
+### jQuery对象栈（减少重复操作是优化jQuery代码性能的关键所在！）
+
+jQuery内部维护着一个jQuery对象栈。每个遍历方法都会找到一组新元素（一个jQuery对象），然后jQuery会把这组元素推入到栈中。
+
+而每个jQuery对象都有三个属性：**context、selector和prevObject**，其中的prevObject属性就指向这个对象栈中的前一个对象，而通过这个属性可以回溯到最初的DOM元素集。
+### end()
+
+**链式的原理就是要返回当前操作的上下文**
+	
+	//给子节点绑定事件后再给父节点绑定事件 链式，精简代码
+	$('ul').find('li').click(function(){
+        alert(1);
+    }).end().click(function(){
+        alert(2); //jQuery引入一个机制，可以通过end()方法回溯到前一个dom对象
+    })
+    
+    //错误 上下文被切换
+    $('ul.first').find('.foo').css('background-color', 'red').find('.bar').css('background-color', 'green');
+    
+    //正确
+    $('ul.first').find('.foo').css('background-color', 'red').end().find('.bar').css('background-color', 'green');
+
+### pushStack
+pushStack: 将一个DOM元素集合加入到jQuery栈  
+流程解析：
+
+1. 构建一个新的jQuery对象，无参 this.constructor()，只是返回引用this
+
+2. jQuery.merge 把elems节点，合并到新的jQuery对象
+
+3. 给返回的新jQuery对象添加属性prevObject ，所以我们看到prevObject 其实还是当前jQuery的一个引用罢了
 
