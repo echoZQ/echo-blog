@@ -18,7 +18,7 @@ Sizzle是一个css选择权引擎，提供的接口跟document.querySelectorAll�
 
 ## Callbacks
 ### js中的caller和callee属性
-caller返回一个对函数的**引用**，该函数调用了当前函数（functionName.caller） 
+caller返回一个对函数的**引用**，该函数调用了当前函数（functionName.caller）。对于函数来说，caller属性只有在函数执行时才有定义（上下文？）。
 
 callee返回正被执行的Function对象，也就是所指定的Function对象的正文([function.]arguments.callee
 可选项 function 参数是当前正在执行的 Function 对象的名称)。  
@@ -62,6 +62,45 @@ callee属性是**arguments对象的一个成员**，它表示**对函数对象�
 	demo(10,20);   // 2个实参
 	demo(10,20,100);  // 3个实参
 	demo(10);  // 1个实参
+
+### jquery提供的回调方式（通过callbacks.fire调用(触发)列表中的函数）
+	//callbacks.fire()访问给定的上下文和参数列表中的所有回调。 
+	//jquery官网的例子(感觉关键是先进先出的顺序)
+	var foo = function( value ) {
+ 		console.log( "foo:" + value );
+	};
+ 
+	var callbacks = $.Callbacks();
+ 
+	//向回调函数列表中添加新的回调函数
+	callbacks.add( foo );
+ 
+	callbacks.fire( "hello" ); // "foo: hello"
+	callbacks.fire( "world" ); // "foo: world"
+ 
+	var bar = function( value ){
+  		console.log( "bar:" + value );
+	};
+ 
+	callbacks.add( bar );
+ 
+	//fire()可以向回调函数中传递参数，并执行回调函数
+	callbacks.fire( "hello again" ); 
+	//"foo: hello again"
+	//"bar: hello again"
+	
+	//实现原理就像下面
+	var Observable = {
+      callbacks: [],
+      add: function(fn) {
+        this.callbacks.push(fn);
+      },
+      fire: function() {
+        this.callbacks.forEach(function(fn) {
+          fn();
+        })
+      }
+  }
 
 
 
