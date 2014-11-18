@@ -2,7 +2,7 @@
 layout: post
 title: jQuery源码阅读
 category: 阅读
-tags: Jquery
+tags: jQuery
 description: 师傅一直在强调源码阅读的重要性，进阶之路很长
 ---
 
