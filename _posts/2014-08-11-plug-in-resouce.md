@@ -2,7 +2,7 @@
 layout: post
 title: jquery插件相关
 category: 备忘
-tags: Jquery
+tags: jQuery
 description: 开发过程中使用插件所遇到及解决的问题
 ---
 
@@ -16,3 +16,8 @@ swipe支持zepto，用于移动端图片轮播还是很不错的。
 这个js主要是消除移动裝置触碰屏幕的300ms的delay。引入js后直接
 
 	FastClick.attach(document.body);
+### jQuery validate
+很好用的表单验证插件，兼容性也不错。但在IE7（兼容模式）下出现“找不到成员”的脚本错误(SCRIPT3：找不到成员)。在jquery.validate.js中找到以下内容,注释掉即可。
+
+	// Add novalidate tag if HTML5.
+	this.attr( "novalidate", "novalidate" );
