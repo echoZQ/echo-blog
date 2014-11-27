@@ -2,7 +2,7 @@
 layout: post
 title: jQuery常用资源
 category: 备忘
-tags: Jquery
+tags: jQuery
 description: 整理过往用到的常用方法
 ---
 

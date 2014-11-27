@@ -2,7 +2,7 @@
 layout: post
 title: 广场舞项目总结
 category: 总结
-tags: Jquery Css
+tags: jQuery Css
 description: 第一次跟小池姐姐做的项目-广场舞项目经验总结
 ---
 
