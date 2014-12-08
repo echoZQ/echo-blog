@@ -121,6 +121,17 @@ jquery.validate是一个很好用的表单验证插件,可以与jquery.form(将�
 ## 让IE6支持png透明
 IE6不支持png透明，在IE6下用gif替代png也不是什么好办法。本项目中尝试了滤镜，效果不错。[访问](http://www.w3cfuns.com/thread-297-1-1.html)
 
+## 问题
+### grunt打包css
+全站的css用grunt合并成了一个文件，但是会出现样式覆盖的问题。如果一开始的时候就想到最终要打包成一个css文件，那当初写的时候应该多一些class命名还是怎么做，还没想通。  
+为了减少http请求，代码重构的时候使用了seajs，但是spm打包后，IE8和IE7会有时报jquery.validate中的未定义错误，并且有的电脑会有的电脑不会。使用seajs之前没有此现象。  
+jquery.validate及jquery.placeholder等顶级模块不知是否应该统一打包进去。
+
+### 搞不赢的浏览器
+之前meta标签使用了<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">，测试的时候各台电脑都表现良好。但是广州哥哥的IE8没有安装GCF导致这个meta标签不奏效，我不得不重新写一些css hack。但是这些css hack写了以后又会影响到安装了GCF的IE浏览器及使用IE内核的浏览器，头疼中。
+
+
+
 ### 参考链接
 [访问](http://www.cnblogs.com/lhb25/archive/2012/11/30/oninput-and-onpropertychange-event-for-input.html)
 	 
