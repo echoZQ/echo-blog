@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 移动端开发
-category: 技术
+category: 总结
 description: 移动端开发要做些总结了
 ---
 
