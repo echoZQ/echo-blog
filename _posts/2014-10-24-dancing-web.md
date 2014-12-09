@@ -127,8 +127,11 @@ IE6不支持png透明，在IE6下用gif替代png也不是什么好办法。本�
 为了减少http请求，代码重构的时候使用了seajs，但是spm打包后，IE8和IE7会有时报jquery.validate中的未定义错误，并且有的电脑会有的电脑不会。使用seajs之前没有此现象。  
 jquery.validate及jquery.placeholder等顶级模块不知是否应该统一打包进去。
 
+### jquery.validate未定义错误
+在spm对js打包后，在IE及qq等浏览器中会不时出现“未定义null form属性”的问题，在含表单验证的模块中奖验证代码加在$(function() {});就好了
+
 ### 搞不赢的浏览器
-之前meta标签使用了<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">，测试的时候各台电脑都表现良好。但是广州哥哥的IE8没有安装GCF导致这个meta标签不奏效，我不得不重新写一些css hack。但是这些css hack写了以后又会影响到安装了GCF的IE浏览器及使用IE内核的浏览器，头疼中。
+之前meta标签使用了<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">，测试的时候各台电脑都表现良好。但是广州哥哥的IE8没有安装GCF导致这个meta标签不奏效，我不得不重新写一些css hack。但是这些css hack写了以后又会影响到安装了GCF的IE浏览器及使用IE内核的浏览器。
 
 
 
