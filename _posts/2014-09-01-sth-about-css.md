@@ -77,3 +77,7 @@ position 设为 relative (相对定位), absolute (绝对定位) 或者 fixed (�
 在 z-index 属性仅在节点的 position 属性为 relative, absolute 或者 fixed 时生效.
 
 参考链接[访问](http://www.neoease.com/css-z-index-property-and-layering-tree/)
+
+### word-wrap和word-break
+word-wrap: 用来标明是否允许浏览器在单词内进行断句，这是为了防止当一个字符串太长而找不到它的自然断句点时产生溢出现象（最重要的一点是它还是会**首先尝试挪到下一行，看看下一行的宽度够不够**，不够的话就进行单词内的断句）。  
+word-break: 用来标明怎么样进行单词内的断句（它不会尝试把长单词挪到下一行，而是直接进行单词内的断句。感觉word-brenak更常用一些）。
