@@ -144,6 +144,18 @@ jquery.validate及jquery.placeholder等顶级模块不知是否应该统一打�
 ### 搞不赢的浏览器
 之前meta标签使用了<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">，测试的时候各台电脑都表现良好。但是广州哥哥的IE8没有安装GCF导致这个meta标签不奏效，我不得不重新写一些css hack。但是这些css hack写了以后又会影响到安装了GCF的IE浏览器及使用IE内核的浏览器。
 
+### grunt压缩产生的问题
+用grunt-contrib-cssmincss文件进行压缩时，发现一些css hack会被删除（*zoom:1;_zoom:1;\9等一些hack会被删）。  
+解决办法是修改配置文件：
+	
+	cssmin: { 
+    	options : { 
+        	compatibility : 'ie8', //设置兼容模式 
+        	noAdvanced : true //取消高级特性 
+    	}
+    }
+	
+	
 
 
 ### 参考链接
