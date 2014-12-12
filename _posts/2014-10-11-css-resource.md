@@ -1,7 +1,7 @@
 ---
 layout: post
 title: css资源
-category: 资源
+category: 备忘
 tags: Css
 description: 阅读大牛博客，收获前端技巧
 ---
