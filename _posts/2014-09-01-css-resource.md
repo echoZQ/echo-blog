@@ -134,4 +134,14 @@ IE6 "\_"
        *color:green; /*IE7及其以下版本浏览器*/
    		_color:purple; /*IE6浏览器*/
 	}
-	
+
+### :nth-child和:nth-of-type
+
+对于:nth-child(2)选择器，在简单白话文中，意味着选择一个元素需要同时满足：  
+这是个段落元素  
+这是父标签的第二个孩子元素  
+
+对于:nth-of-type(2)选择器，意味着选择一个元素如果：
+选择父标签的第二个段落子元素
+
+[访问](http://www.zhangxinxu.com/wordpress/2011/06/css3%E9%80%89%E6%8B%A9%E5%99%A8nth-child%E5%92%8Cnth-of-type%E4%B9%8B%E9%97%B4%E7%9A%84%E5%B7%AE%E5%BC%82/)
