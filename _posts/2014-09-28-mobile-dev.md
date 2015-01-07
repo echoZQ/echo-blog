@@ -8,7 +8,7 @@ description: 移动端开发要做些总结了
 ### meta
 
 	//强制让文档的宽度与设备的宽度保持1:1，并且文档最大的宽度比例是1.0，且不允许用户点击屏幕放大浏览；
-	<meta content="width=device-width, initial-scale=1.0, maximum-s	cale=1.0, user-scalable=0;" name="viewport" /> 
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" /> 
 	
 	//width=device-width，它的意思是，把手机浏览器的布局视口的宽度，更改为当前设备的宽度。你还可以使用width=500这样的具体数值（也是css像素值）当屏幕宽度大于500像素时，浏览器会扩展视口（而不是放大页面）来适应屏幕：。总的来说，使用这个<meta>标签元素，就可以告诉手机浏览器当前页面应该使用的布局视口的尺寸。
 	

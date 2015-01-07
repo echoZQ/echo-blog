@@ -82,7 +82,7 @@ jquery.validate是一个很好用的表单验证插件,可以与jquery.form(将�
 	</script>
 
 ### 输入框值实时监听
-涉及评论功能时需要实时监听输入的字数，完成可输入字数的计数功能。下面有一些关于这个功能的注意点
+涉及评论功能时需要实时监听输入的字数，完成可输入字数的计数功能。下面有一些关于这个功能的注意点:  
 1. 如果用max-length,那空格或换行符会导致计数值错误，所以直接用js统计比较好  
 2. 单使用input(HTML5的标准事件，对于检测 textarea,input:text, input:password和input:search 这几个元素通过用户界面发生的内容变化非常有用，在内容修改后立即被触发，不像onchange 事件需要失去焦点才触发)和propertychange(IE特有)并不能很好的监听复制粘贴事件，所有更好的做法是focus、keyup、input、propertychange四个事件一起使用。  
 3. 在未登陆状态下评论，先跳转登陆页。需要js用cookie记录评论内容。问题是cookie存储时会把换行符以后的内容直接过滤掉(chrome)，而IE则会将换行符显示为'_'  需要注意的是不同系统下换行符是不同的Windows系统里面(“\r\n”)、Unix系统里(“\n”)、Mac系统里("\r"),虽然如此，但实践后发现只有如下方案可以完美解决上述问题
@@ -110,12 +110,15 @@ jquery.validate是一个很好用的表单验证插件,可以与jquery.form(将�
             return ""
         }
 
-4.纠正一下3，其实用escape()与unescape()函数对字符串进行编码与解码即可。
+4.纠正一下3，其实用escape()与unescape()函数对字符串进行编码与解码即可。我把问题搞复杂了==php没学好!
 
 ### 关于兼容IE的文档模式
 之前项目开发过程中一直用IE7文档模式(因为IE8比较难搞)，但是IE7的文档模式导致原本应该支持圆角阴影等属性的IE9,10等都不支持了，页面很难看。看了淘宝和花瓣等网站，发现他们都是如下的兼容方式。IE7,8,9,10及360等均有较好的表现。
 	
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">//如果安装了GCF，则使用GCF来渲染页面「”chrome=1″」，如果没有安装GCF，则使用最高版本的IE内核进行渲染「”IE=edge”」。
+	//X-UA-Compatible是IE8的一个专有<meta>属性，它告诉IE8采用何种IE版本去渲染网页
+	
+链接[访问](http://lightcss.com/add-x-ua-compatible-meta-to-your-website/)
 	
 ### 让IE6支持png透明
 IE6不支持png透明，在IE6下用gif替代png也不是什么好办法。本项目中尝试了滤镜，效果不错。[访问](http://www.w3cfuns.com/thread-297-1-1.html)
@@ -124,9 +127,9 @@ IE6不支持png透明，在IE6下用gif替代png也不是什么好办法。本�
 当margin-top、margin-left为负值的时候，会把元素上移、左移，同时文档流中的位置也发生相应变化,这点与position:relative的元素设置top、left后元素还占据原来位置不同。  
 当margin-bottom、margin-right设为负值的时候，元素本身没有位置变化，后面的元素会下移、右移。
 
-margin负值的用处：
-1. 绝对定位水平垂直居中
-2. 多列布局
+margin负值的用处：  
+1. 绝对定位水平垂直居中  
+2. 多列布局  
 3. 放大元素!(本项目中重点) 通过负边距使父元素“变大“（注意是结合margin-bottom、margin-right，因为这两个属性不会影响元素本身位置！），就能排列下原定的div数量，且兼容性很好。
 
 
@@ -134,12 +137,13 @@ margin负值的用处：
 参考文档[访问](http://www.cnblogs.com/dolphinX/p/4071725.html)
 ## 问题
 ### grunt打包css
-全站的css用grunt合并成了一个文件，但是会出现样式覆盖的问题。如果一开始的时候就想到最终要打包成一个css文件，那当初写的时候应该多一些class命名还是怎么做，还没想通。  
-为了减少http请求，代码重构的时候使用了seajs，但是spm打包后，IE8和IE7会有时报jquery.validate中的未定义错误，并且有的电脑会有的电脑不会。使用seajs之前没有此现象。  
-jquery.validate及jquery.placeholder等顶级模块不知是否应该统一打包进去。
+全站的css用grunt合并成了一个文件，但是会出现样式覆盖的问题。如果一开始的时候就想到最终要打包成一个css文件，那当初写的时候应该多一些class命名还是怎么做，看Amaze有个bem命名法则有参考意义。  
+
 
 ### jquery.validate未定义错误
-在spm对js打包后，在IE及qq等浏览器中会不时出现“未定义null form属性”的问题，在含表单验证的模块中奖验证代码加在$(function() {});就好了
+为了减少http请求，代码重构的时候使用了seajs，但是spm打包后，IE8和IE7会有时报jquery.validate中的未定义错误，并且有的电脑会有的电脑不会。使用seajs之前没有此现象。其实在含表单验证的模块中奖验证代码加在$(function() {});就好了==我给忘了！！！  
+
+jquery.validate及jquery.placeholder等顶级模块不知是否应该统一打包进去。
 
 ### 搞不赢的浏览器
 之前meta标签使用了<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">，测试的时候各台电脑都表现良好。但是广州哥哥的IE8没有安装GCF导致这个meta标签不奏效，我不得不重新写一些css hack。但是这些css hack写了以后又会影响到安装了GCF的IE浏览器及使用IE内核的浏览器。

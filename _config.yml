@@ -13,7 +13,6 @@ author:
 title: 愚人码头 
 description: 写故事的女同学
 url: http://echozq.github.io
-rss_url: /echo-blog/pages/atom.xml
 
 # gavatar头像及Favicon
 gavatar: /echo-blog/public/upload/gavatar/gavatar.jpeg
