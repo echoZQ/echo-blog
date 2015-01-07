@@ -5,6 +5,8 @@ category: 备忘
 tags: Php 
 description: php常用资源 
 ---
+### tail命令
+php调试的时候写日志文件，用到tail -f fileName命令（tail -f 命令可用于监视另一个进程正在写入的文件的增长）
 
 ### php中文字符串的截取
 	mb_strlen( $str, $encoding ) 
