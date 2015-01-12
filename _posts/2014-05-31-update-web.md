@@ -16,7 +16,6 @@ description: 第一次自己更新网站
 
 宿主机地址:zzz
 
-工程所用php框架:Kohana
 
 ## 具体步骤
 
@@ -83,7 +82,13 @@ description: 第一次自己更新网站
 我们平时访问是访问宿主机，反向代理到虚拟机
 
 
-
 ## 理解一下
 
 就像章也姐姐传文件到我电脑里的虚拟机，只能先把文件传到我的电脑上，然后我再把文件传到虚拟机里。章也姐姐不能直接绕过我把文件传到我的虚拟机里。还有若要登录我的电脑中的虚拟机，我必须先登录本机。
+
+## 命令说明
+git archive 用来方便的将git repo某个快照打包。  
+打包成gzip：git archive master --prefix='project/' | gzip > project.tar.gz    
+打包成zip：git archive master --prefix='project/' --format=zip > project.zip    
+打包成tar：git archive master --prefix='project/' --format=tar > project.tar    
+master可用任何一个branch或者commitId替换。
