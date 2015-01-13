@@ -24,5 +24,25 @@ description: 阅读大牛博客，收获前端技巧
 
 这个部分还涉及了css3的一个关键字currentColor
 
+### HTML5 响应式图片
+
+	//关于背景
+	background-image:url(http://img02.taobaocdn.com/tps/i2/T10s3JXn4XXXXnbIAn-105-160.png);/* 普通屏幕 */
+	background-image: -webkit-image-set(
+    url(http://img02.taobaocdn.com/tps/i2/T10s3JXn4XXXXnbIAn-105-160.png) 1x,
+    url(http://img04.taobaocdn.com/tps/i4/T1947tXmJhXXcCfooh-210-320.png) 2x);/* Retina */
+    
+    
+    //关于html中的img元素
+    <picture width="500" height="500">
+		<source media="(min-width: 45em)" srcset="large-1.jpg 1x, large-2.jpg 2x">
+		<source media="(min-width: 18em)" srcset="med-1.jpg 1x, med-2.jpg 2x">
+		<source srcset="small-1.jpg 1x, small-2.jpg 2x">
+		<img src="small-1.jpg" alt="">
+	</picture>
+
+关于image-set还是有问题的，当初页面在某个华为还是什么机子上的时候直接背景就挂了==
+
+博客链接[访问](http://ued.taobao.org/blog/2013/01/css-and-html5-adaptive-images/)
 
 
