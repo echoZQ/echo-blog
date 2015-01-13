@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 作用域链
+title: javascript作用域链
 category: 技术
 tags: Javascript
 description: 本周师傅让我讲作用域链，趁此机会把这个东西搞搞清楚
@@ -9,7 +9,7 @@ description: 本周师傅让我讲作用域链，趁此机会把这个东西搞�
 ### 关于function
 javascript中没有类的概念，都是函数。类有一个很重要的特性，就是可以根据它的构造函数来创建以它为模板的对象。在javascript中，函数就有2个功能
 第一、 作为一般函数调用
-第二、 作为它原型对象的构造函数,即new（）
+第二、 作为它原型对象的构造函数,即new()
 
 ### new()做了什么
 1，生成一个新的对象object，类型是一个简单的object
@@ -60,7 +60,7 @@ javascript中没有类的概念，都是函数。类有一个很重要的特性�
 	a.i = 5; //重新赋值自身属性
 	console.log(a.i); //找的是this.i
 	delete a.i; //删除的不是原型链上的值
-	A.prototype.i = 9;
+	A.prototype.i = 9; //注意是A而不是a,如果是a.prototype.i是错误的
 	console.log(a.i); //9
 
 	a.__proto__ = B.prototype;
@@ -68,5 +68,5 @@ javascript中没有类的概念，都是函数。类有一个很重要的特性�
 
 	console.log((typeof a) === (typeof (new B()))); //true
 	
-感觉属性查找的时候，先查找构造函数里的属性，如果找不到，才是查找原型链。如果要修改原型链上的属性，应当用A.prototype.i = ?
+感觉属性查找的时候，先查找构造函数里的属性，如果找不到，才是查找原型链。如果要修改原型链上的属性，应当用A.prototype.i = ?,要取原型链上的值应当是console.log(A.prototype.i)。
 	

@@ -1,0 +1,71 @@
+<!DOCtype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>js事件机制</title>
+	<style type="text/css">
+	#red {
+		box-sizing: border-box;
+		background: red;
+		width: 100px;
+		height: 100px;
+		padding-top: 25px; 
+		cursor: pointer;
+	}
+	#blue {
+		margin-top: 25px;
+		background: blue;
+		width: 50px;
+		height: 50px;
+		margin: auto;
+		cursor: pointer;
+	}
+	</style>
+</head>
+<body>
+<div id="red">
+	<div id="blue">
+	</div>
+</div>
+<script type="text/javascript">
+	window.onload = function () {
+		function clickRed() {
+			alert("点击了红色区块");
+		};
+		function clickBule(event) {
+			alert("点击了蓝色区块");
+			event.stopPropagation();
+		};
+
+		document.getElementById('red').addEventListener("click", clickRed, false);
+		document.getElementById('blue').addEventListener("click", clickBule, false);
+
+		// document.getElementById('red').addEventListener("click", clickRed, true);
+		// document.getElementById('blue').addEventListener("click", clickBule, true);
+
+		// document.getElementById('red').addEventListener("click", clickRed, false);
+		// document.getElementById('blue').addEventListener("click", clickBule, true);
+
+		// document.getElementById('red').addEventListener("click", clickRed, true);
+		// document.getElementById('blue').addEventListener("click", clickBule, false);
+
+		// document.getElementById('red').onclick = clickRed;
+		// document.getElementById('red').onclick = clickBule;
+
+		// document.getElementById('red').addEventListener("click", function () {
+		// 	alert("1");
+		// }, false);
+		// document.getElementById('red').addEventListener("click", function () {
+		// 	alert("2");
+		// }, false);
+
+		// document.getElementById('red').attachEvent("onclick", function () {
+		// 	alert("1");
+		// });
+		// document.getElementById('red').attachEvent("onclick", function() {
+		// 	alert("2");
+		// });
+	}
+</script>
+</body>
+</html>
