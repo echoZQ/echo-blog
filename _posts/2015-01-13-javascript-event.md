@@ -251,4 +251,4 @@ listener: 不能加括号**只能**写函数名！！！
 
 参考链接[访问](http://www.cnblogs.com/yexiaochai/p/3477715.html)  
 参考链接[访问](http://www.cnblogs.com/hustskyking/p/problem-javascript-event.html)  
-参考链接[访问](http://www.html5china.com/js/jsadv/20111120_2737.html）
+参考链接[访问](http://www.html5china.com/js/jsadv/20111120_2737.html)
