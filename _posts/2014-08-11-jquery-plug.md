@@ -23,3 +23,4 @@ swipe支持zepto，用于移动端图片轮播还是很不错的。
 	this.attr( "novalidate", "novalidate" );
 ### sewise player
 视频播放插件，兼容性很好。[github](https://github.com/jackzhang1204/sewise-player)
+

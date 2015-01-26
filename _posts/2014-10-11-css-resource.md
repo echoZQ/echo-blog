@@ -43,6 +43,19 @@ description: 阅读大牛博客，收获前端技巧
 
 关于image-set还是有问题的，当初页面在某个华为还是什么机子上的时候直接背景就挂了==
 
+### 透明背景
+在用bootstrap wysiwyg这个富文本编辑器的插件时,发现用图替换input file的方法是对input用绝对定位，然后透明的放在icon上面。
+
+	element.style {
+		opacity: 0;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 36px;
+		height: 30px;
+	}
+背景透明还是有很多妙用的。
+
 博客链接[访问](http://ued.taobao.org/blog/2013/01/css-and-html5-adaptive-images/)
 
 
