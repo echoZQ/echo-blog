@@ -25,7 +25,7 @@ google的时候看到了这篇博文[访问](http://www.blogjava.net/BearRui/arc
 
 ### 浏览器页面呈现流程
 
-![浏览器对页面的处理流程](/Users/zhaoqian/echo-blog/public/img/2015-01-26-render-tree.png)
+![浏览器对页面的处理流程](/echo-blog/public/img/2015-01-26-render-tree.png)
 
 1. 浏览器把获取到的html代码解析成1个Dom树，html中的每个tag都是Dom树中的1个节点，根节点就是我们常用的document对象(注意不是\<body>而是\<html>)。dom树里面包含了所有的html tag,**包括display:none隐藏**，还有用JS动态添加的元素等。
 
