@@ -20,7 +20,7 @@ description: 目前为止遇到的最匪夷所思的bug
 ## 最终方案
 张鑫旭最近的博文[访问](http://www.zhangxinxu.com/wordpress/2015/01/chrome-absolute-display-visibility-render-bug/)里提到了haslayout触发,在js动态添加option后，使用-webkit-transform: translateZ(0)很好的解决了这个渲染bug。
 
-## 页面重绘,回流相关
+## 页面重绘,重排相关
 google的时候看到了这篇博文[访问](http://www.blogjava.net/BearRui/archive/2010/05/10/320502.html)
 
 ### 浏览器页面呈现流程
@@ -35,14 +35,14 @@ google的时候看到了这篇博文[访问](http://www.blogjava.net/BearRui/arc
 
 4. 一旦render tree构建完毕后，浏览器就可以根据render tree来绘制页面了。
 
-### 回流与重绘
-**回流必将引起重绘，而重绘不一定会引起回流。**
+### 重绘与重排
+**回流必将引起重绘，而重绘不一定会引起重排。**
 
 1. 当render tree中的一部分(或全部)因为元素的**尺寸，布局，隐藏**等改变而需要重新构建。这就称为回流(重新布局)。每个页面至少需要一次回流，就是在页面第一次加载的时候。
 
 2. 当render tree中的一些元素需要更新属性，而这些属性只是影响元素的外观，风格，而**不会影响布局**的，比如background-color。则就叫称为重绘。
 
-### 什么会影响页面重绘和回流
+### 什么会影响页面重绘和重排
 
 (是否有影响到页面的布局)
 其实任何对render tree中元素的操作都会引起回流或者重绘，比如：
@@ -58,7 +58,7 @@ google的时候看到了这篇博文[访问](http://www.blogjava.net/BearRui/arc
     5. 还有一种是用户的操作，比如改变浏览器大小，改变浏览器的字体大小等(回流+重绘)
 
 
-### 如何减少回流和重绘
+### 如何减少重绘和重排
 其实就是减少对render tree的操作。具体方法有:
 
 1. 不要一个个改变元素样式,可以直接改变className。或者像jquery里.css方法直接传对象好了。

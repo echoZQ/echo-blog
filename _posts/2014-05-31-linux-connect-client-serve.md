@@ -24,7 +24,7 @@ description: 第一次自己更新网站
 - git archive master --prefix='xxx/' --format=zip >xxx.zip  [进入xxx目录下执行压缩]
 - scp xxx.zip root@yyy:/root/ [通过ssh把文件复制到服务器宿主机]
 - ssh root@yyy [ls查看上传.zip文件是否成功  exit退出ssh]
-- scp xxx.zip root@zzz:/data/www [从服务器上把文件复制到虚拟机root@zzz:/data/www目录下]
+- scp xxx.zip root@zzz:/data/www [从服务器上把文件复制到虚拟机root@zzz:/data/www目录下] 如果是tar打包那就是scp xxx.tar.gz root@zzz:/data/www
 - ssh root@zzz [登陆虚拟机]
 - cd /data/www [查看有没有xxx的文件]
 - mv xxx xxx-今天的日期 [重命名文件夹,保留之前的版本，备份]
@@ -62,3 +62,7 @@ git archive 用来方便的将git repo某个快照打包。
 打包成zip：git archive master --prefix='project/' --format=zip > project.zip    
 打包成tar：git archive master --prefix='project/' --format=tar > project.tar    
 master可用任何一个branch或者commitId替换。
+
+
+## 很棒的linux命令查询网站
+[访问](http://man.linuxde.net/)
