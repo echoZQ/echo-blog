@@ -1,7 +1,7 @@
 ---
 layout: post
-title: atom-shell
-category: 技术
+title: atom-shell阅读及翻译
+category: 阅读
 tags: Atom
 description: 桌面应用(运行在桌面的网页)
 ---
