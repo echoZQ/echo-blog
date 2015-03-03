@@ -8,7 +8,7 @@ category: 技术
 
 使用jquery或zepto过程中遇到过什么坑:
 
-http错误:
+http协议,错误码:
 
 cookie:
 
