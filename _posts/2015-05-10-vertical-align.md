@@ -1,6 +1,7 @@
 ---
 layout: post
 title: vertical-align属性
+category: 备忘
 tags: Css
 description: 因为基础的关系，面试的时候已经被秒很多次了==不管是css还是js，水深了去了。要警觉，要先学走再学跑学跳
 ---
