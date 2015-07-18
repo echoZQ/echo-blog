@@ -85,7 +85,9 @@ description: 自己动手丰衣足食
 从第一组图可以看到，DOMContentLoaded(DOMContentLoaded事件触发时，仅当DOM加载完成)完成的时间base64>img>sprite,我们光从代码就可以看出base64使得整个html文件臃肿了很多，而且我只是用了三张图片，三张图片本身尺寸也不大。但是我们关注到onload(页面上所有的DOM，样式表，脚本，图片，flash都已经加载完成了)事件完成的时间base64<sprite<img,其中base64明显是快了很多。 
 
  
-看到图一的request数量的时候我还是疑惑了，不是说好的base64可以减少http请求么，而实际我们看到base64和img下request是一样的都是4次(三张图+1个html文档，从图二也可反映)。但是我们可以注意到base64中没有图片大小0 B/0 B transferred。反而sprite的文件大小更大了，三张图片合成一个css sprite后我没有做图片压缩。
+看到图一的request数量的时候我还是疑惑了，不是说好的base64可以减少http请求么，而实际我们看到base64和img下request是一样的都是4次(三张图+1个html文档，从图二也可反映)。但是我们可以注意到base64中没有图片大小0 B/0 B transferred,下图可以看到每张图片的timeline里面只有下载的时间，没有http请求相关的时间。反而sprite的文件大小更大了，三张图片合成一个css sprite后我没有做图片压缩。  
+
+![图片显示](/echo-blog/public/img/2015-07-18-base64.png)
 
 ### 最后
 上述只是一个很简陋的例子，甚至数据也不一定科学。我们在选用任何方式展示图片的时候都要权衡一下利弊。像我觉得base64虽然可以比较好的优化性能(做无线，兼容性的问题暂且不表)，但是那么臃肿的文件，强迫症简直不能忍。所以我更多的采用开发过程中使用img和background，最后将可以合并的图片合成sprite上线。
