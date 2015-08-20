@@ -2,7 +2,7 @@
 layout: post
 title: 关于base64、img、css sprite的一些
 category: 技术
-tags: css
+tags: Css
 description: 自己动手丰衣足食
 ---
 

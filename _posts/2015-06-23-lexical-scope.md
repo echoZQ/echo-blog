@@ -2,7 +2,7 @@
 layout: post
 title: 关于词法作用域
 category: 技术
-tags: js
+tags: Javascript
 description: 看javascript语言精粹
 ---
 
