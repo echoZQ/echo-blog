@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 性能优化
-category: 总结 技术
+category: 技术
 description: 性能优化的一些工作记录
 ---
 
